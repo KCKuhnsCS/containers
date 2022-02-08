@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+read -p 'Name: ' namevar
+echo $namevar
 echo "Enter your Falcon CID"
 read FALCON_CID
 echo "Enter your Client ID"
