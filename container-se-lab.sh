@@ -5,7 +5,7 @@ Press any key to start."
 read -t 5 -p "First we'll check if Docker is installed and remove old versions.
 Next we'll configure resources and permissions we need for Docker and install the new version."
 echo
-echo
+echo "HELLO TESTING"
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
 # Update and install packages to use a repository over HTTPS
