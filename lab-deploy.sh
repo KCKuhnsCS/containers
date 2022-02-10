@@ -91,7 +91,7 @@ clear
 echo "Enter your Client Secret"
 read FALCON_CLIENT_SECRET
 clear
-echo "Enter your Falcon Cloud"
+echo "Enter your Falcon Cloud (US-1, US-2, EU-1, etc."
 read FALCON_CLOUD
 export FALCON_CLOUD_API=api.crowdstrike.com
 export FALCON_CONTAINER_VERSION="6.30.0-1301"
