@@ -1,0 +1,37 @@
+{
+    "family": "tryan-vulnapp-fargate", 
+    "networkMode": "awsvpc", 
+    "containerDefinitions": [
+        {
+            "name": "detection-container", 
+            "image": "517716713836.dkr.ecr.us-west-2.amazonaws.com/tryan:vulnapp", 
+            "essential": true,
+            "entryPoint": [
+                "/bin/sh",
+                "-c",
+                "/entrypoint.sh"
+            ],
+            "portMappings": [
+                {
+                  "containerPort": 8080,
+                  "protocol": "tcp"
+                }
+              ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "tryan-fargate-detection-test",
+                    "awslogs-region": "us-west-2",
+                    "awslogs-create-group": "true",
+                    "awslogs-stream-prefix": "tryan-detection-test"
+                }
+            }
+        }
+    ], 
+    "requiresCompatibilities": [
+        "FARGATE"
+    ], 
+    "cpu": "256", 
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::517716713836:role/ECSTaskExecutionRole"
+}
